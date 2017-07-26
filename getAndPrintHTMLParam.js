@@ -19,14 +19,13 @@ function getAndPrintHTML(options){
 
   https.get(options, function(response){
     response.setEncoding('utf8');
-    let output = '';
+    
     response.on('data', function(data){
-      output += data;
-      //console.log(data);
+     
+      console.log(data);
     });
 
     response.on('end', function(){
-      console.log(output);
       console.log("Response stream complete");
     });
   });
